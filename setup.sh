@@ -17,6 +17,7 @@ echo \
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 apt-get install -y docker-compose
+wget https://raw.githubusercontent.com/thebrentley/jarvis-setup/refs/heads/main/docker-compose.yml
 
 # Start docker services
 docker-compose up -d
@@ -35,8 +36,8 @@ ollama pull llama3.2:3b
 
 # Create model files
 mkdir modelfiles
-wget https://raw.githubusercontent.com/thebrentley/jarvis-setup/refs/heads/main/modelfile-jarvis-ll3.2-3b.txt > modelfiles/jarvis-ll3.2-3b 
-ollama create model --name jarvis-chat-v0.0.1 -f modelfiles/jarvis-ll3.2-3b
+wget -P modelfiles https://raw.githubusercontent.com/thebrentley/jarvis-setup/refs/heads/main/modelfile-jarvis-ll3.2-3b.txt 
+ollama create jarvis-chat-v0.0.1 -f modelfiles/modelfile-jarvis-ll3.2-3b.txt 
 
 # Bluetooth setup
 apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev
@@ -53,3 +54,6 @@ nvm use 20
 apt-get install -y npm
 npm install -g yarn
 apt-get install -y python3.12
+
+#cleanup
+apt autoremove -y
