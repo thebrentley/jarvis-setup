@@ -45,15 +45,5 @@ apt-get install -y bluetooth bluez libbluetooth-dev libudev-dev
 # These are optional / for debugging purposes
 apt-get install -y net-tools
 
-
-# Development only
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-source ~/.bashrc
-nvm install 20
-nvm use 20
-apt-get install -y npm
-npm install -g yarn
-apt-get install -y python3.12
-
 #cleanup
 apt autoremove -y
