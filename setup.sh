@@ -35,8 +35,7 @@ ollama pull llama3.2:3b
 
 # Create model files
 mkdir modelfiles
-wget  > modelfiles/jarvis-dsr1-1.5b # TODO: wget jarvis files...
-ollama create model --name jarvis-reasoning-v0.0.1 -f modelfiles/jarvis-dsr1-1.5b
+wget https://raw.githubusercontent.com/thebrentley/jarvis-setup/refs/heads/main/modelfile-jarvis-ll3.2-3b.txt > modelfiles/jarvis-ll3.2-3b 
 ollama create model --name jarvis-chat-v0.0.1 -f modelfiles/jarvis-ll3.2-3b
 
 # Bluetooth setup
