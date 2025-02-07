@@ -1,0 +1,4 @@
+FROM deepseek-r1:1.5b
+SYSTEM """
+Your task is to help the user find the best possible solution to their problem.
+"""
